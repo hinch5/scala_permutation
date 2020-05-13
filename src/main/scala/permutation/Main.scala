@@ -8,6 +8,9 @@ object Main {
     println(permutation.getSuperString);
     println(permutation.i(2));
     val longSet = List(1, 2, 3, 4, 5, 6);
-    val
+    val longPositions = List(3, 4, 5, 2, 1, 6);
+    val longPerm = new Permutation(longSet, longPositions);
+    val transpositions = longPerm.getRepresentation;
+    println(transpositions.length);
   }
 }
