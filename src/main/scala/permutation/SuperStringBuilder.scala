@@ -5,6 +5,7 @@ abstract class SuperStringBuilder[T] {
   def length(a: T): Int;
   def substring(a: T, start: Int): T;
   def substring(a: T, start: Int, end: Int): T;
+  def contains(a: T, b: T): Boolean;
 }
 
 object SuperStringBuilder {
@@ -16,5 +17,7 @@ object SuperStringBuilder {
     override def substring(a: String, start: Int, end: Int): String = a.substring(start, end);
 
     override def substring(a: String, start: Int): String = a.substring(start);
+
+    override def contains(a: String, b: String): Boolean = a contains b;
   }
 }

@@ -2,8 +2,8 @@ package permutation
 
 object Main {
   def main(args: Array[String]): Unit = {
-    val stringSet = List("asdf", "ghas");
-    val positions = List(2, 1);
+    val stringSet = List("asdf", "ghas", "asd");
+    val positions = List(2, 1, 3);
     val permutation = new Permutation(stringSet, positions);
     println(permutation.getSuperString);
     println(permutation.i(2));
@@ -12,5 +12,6 @@ object Main {
     val longPerm = new Permutation(longSet, longPositions);
     val transpositions = longPerm.getRepresentation;
     println(transpositions.length);
+    transpositions.foreach(println);
   }
 }
