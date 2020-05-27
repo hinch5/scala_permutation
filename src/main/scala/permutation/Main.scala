@@ -7,6 +7,8 @@ object Main {
     val permutation = new Permutation(stringSet, positions);
     println(permutation.getSuperString);
     println(permutation.i(2));
+    val t = permutation.multTransposition(1, 3);
+    println(t);
     val longSet = List(1, 2, 3, 4, 5, 6);
     val longPositions = List(3, 4, 5, 2, 1, 6);
     val longPerm = new Permutation(longSet, longPositions);

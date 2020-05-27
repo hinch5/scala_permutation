@@ -70,6 +70,16 @@ class Permutation[T](pset: List[T], pperm: List[Int]) {
 
   def superStringSize(implicit builder: SuperStringBuilder[T]): Int = builder.length(this.getSuperString)
 
+  def multTransposition(a: Int, b: Int): Permutation[T] = {
+    if (a < 1 || b < 1 || a > this.perm.length || b > this.perm.length) {
+      throw new RuntimeException("invalid transposition");
+    }
+    val first = this.perm.indexOf(a);
+    val second = this.perm.indexOf(b);
+    val newPerm = this.perm.updated(first, this.perm(second)).updated(second, this.perm(first));
+    new Permutation[T](this.set, newPerm);
+  }
+
   private[this] def checkUnique[U](toCheck: List[U]) = {
     val valueSet = scala.collection.mutable.Set[U]();
     toCheck.foreach(value => {
